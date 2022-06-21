@@ -1,0 +1,38 @@
+.wrapper {
+  min-width: 560px;
+  max-width: 600px;
+}
+
+.title {
+  margin: 0;
+  margin-bottom: 40px;
+}
+
+.title > h3 {
+  font-weight: 300;
+  margin: 0;
+}
+
+.subTitle {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--gray-text-color);
+}
+
+.formOuter {
+  max-width: 420px;
+}
+
+.buttonsOuter {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 420px;
+  margin: var(--margin-buttons-outer);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    min-width: auto;
+  }
+}

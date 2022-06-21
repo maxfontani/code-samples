@@ -1,0 +1,107 @@
+.wrapper {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  color: var(--base-text-color);
+  font-family: 'Roboto';
+  font-size: 18px;
+  width: 100%;
+  height: var(--form-input-line-height);
+}
+
+.underline {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: inline-block;
+  background-color: var(--inputs-stroke-color);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0%;
+  transform-origin: 0%;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+  height: 2px;
+}
+
+.dropdown li {
+  border-radius: 4px;
+  height: 44px;
+}
+
+.button > div {
+  background-color: var(--transparent) !important;
+}
+
+/* default arrow */
+.button > div > div > div {
+  display: none;
+}
+
+/* custom arrows */
+.button > div::before {
+  content: '';
+  position: absolute;
+  left: 38px;
+  top: 10px;
+  background: no-repeat url('./Icons/ArrowDown.svg') center 5px;
+  width: 12px;
+  height: 12px;
+}
+
+.button > div[aria-expanded='true']::before {
+  content: '';
+  position: absolute;
+  left: 38px;
+  top: 10px;
+  background: no-repeat url('./Icons/ArrowUp.svg') center 5px;
+  width: 12px;
+  height: 12px;
+}
+
+.wrapper.focused .underline {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  transform-origin: 0 100%;
+}
+
+.wrapper.invalid .underline {
+  background-color: var(--inputs-underline-invalid-color);
+  transform: scaleX(1);
+}
+
+.formError {
+  position: absolute;
+  left: 0;
+  top: var(--form-input-line-error-message-offset);
+  align-self: flex-start;
+  color: var(--error-message-color);
+  font-family: 'Roboto';
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.wrapper.dark .dropdown li {
+  background-color: var(--soft-dark) !important;
+}
+
+.wrapper.dark .dropdown li:hover {
+  background-color: var(--hover-dark) !important;
+}
+
+.wrapper.dark .dropdown li:first-child:hover {
+  background-color: var(--soft-dark) !important;
+}
+
+.wrapper.dark .search::before {
+  content: '';
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 18px;
+  background: no-repeat url('../../../Assets/Images/Icons/SearchIconDark.svg')
+    center 5px;
+  width: 25px;
+  height: 25px;
+}
